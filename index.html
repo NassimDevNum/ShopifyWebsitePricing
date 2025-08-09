@@ -3,329 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grille "Crescendo" - Création de site Shopify</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #e9ecef;
-        }
-
-        .title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .icon {
-            width: 24px;
-            height: 24px;
-            background: linear-gradient(45deg, #28a745, #20c997);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-
-        .title h1 {
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .share-btn {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 6px;
-            text-decoration: none;
-            color: #495057;
-            font-size: 14px;
-        }
-
-        .table-container {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 14px;
-        }
-
-        th {
-            background-color: #f8f9fa;
-            padding: 15px 12px;
-            text-align: left;
-            font-weight: 600;
-            border-bottom: 2px solid #dee2e6;
-            color: #495057;
-        }
-
-        td {
-            padding: 20px 12px;
-            vertical-align: top;
-            border-bottom: 1px solid #dee2e6;
-        }
-
-        .level-cell {
-            font-weight: 600;
-            min-width: 120px;
-        }
-
-        .level-1 { color: #6c757d; }
-        .level-2 { color: #fd7e14; }
-        .level-3 { color: #28a745; }
-        .level-4 { color: #28a745; }
-        .level-5 { color: #dc3545; }
-
-        .description-cell {
-            font-weight: 500;
-            min-width: 200px;
-        }
-
-        .features-cell {
-            min-width: 300px;
-        }
-
-        .features-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .features-list li {
-            margin-bottom: 6px;
-            padding-left: 8px;
-            position: relative;
-        }
-
-        .features-list li:before {
-            content: "- ";
-            color: #6c757d;
-            position: absolute;
-            left: 0;
-        }
-
-        .price-cell {
-            font-weight: 600;
-            min-width: 180px;
-            text-align: right;
-        }
-
-        .price-main {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 4px;
-        }
-
-        .price-sub {
-            font-size: 12px;
-            color: #6c757d;
-        }
-
-        .emoji {
-            margin-left: 5px;
-        }
-
-        .note {
-            text-align: right;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #dee2e6;
-            font-size: 13px;
-            color: #6c757d;
-        }
-
-        tr:hover {
-            background-color: #f8f9fa;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                padding: 15px;
-            }
-            
-            .header {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            table {
-                font-size: 13px;
-            }
-            
-            th, td {
-                padding: 10px 8px;
-            }
-        }
-    </style>
+    <title>Crescendo - Création Shopify Premium</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="floating-elements">
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+    </div>
+
     <div class="container">
         <div class="header">
-            <div class="title">
-                <div class="icon">G</div>
-                <h1>Grille "Crescendo" – Création de site Shopify</h1>
+            <h1 class="title">Crescendo</h1>
+            <p class="subtitle">Création de sites Shopify sur mesure</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Première ligne: Basique & Standard -->
+            <div class="row row-2">
+                <div class="card card-basique">
+                    <div class="card-header">
+                        <div class="card-icon">⚪</div>
+                        <div>
+                            <div class="card-level">Basique</div>
+                            <div class="card-description">Mise en place rapide</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-price">
+                        <div class="price-amount">300 - 800€</div>
+                        <div class="price-subtitle">Freelance débutant</div>
+                    </div>
+                    
+                    <ul class="features">
+                        <li>Installation Shopify</li>
+                        <li>Paramétrage paiements et livraisons</li>
+                        <li>Thème gratuit installé et logo</li>
+                        <li>Ajout manuel de quelques produits</li>
+                    </ul>
+                </div>
+
+                <div class="card card-standard">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <div>
+                            <div class="card-level">Standard</div>
+                            <div class="card-description">Site prêt à vendre</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-price">
+                        <div class="price-amount">800 - 2K€</div>
+                        <div class="price-subtitle">Freelance confirmé</div>
+                    </div>
+                    
+                    <ul class="features">
+                        <li>Tout du niveau Basique</li>
+                        <li>Personnalisation couleurs/typos</li>
+                        <li>Paramétrage collections</li>
+                        <li>SEO basique (titres, méta-descriptions)</li>
+                        <li>Formation rapide d'utilisation</li>
+                    </ul>
+                </div>
             </div>
-            <a href="#" class="share-btn">
-                ↗ Share
-            </a>
-        </div>
 
-        <div class="note" style="text-align: right; margin-bottom: 20px;">
-            Fourchette de prix (hors abonnement Shopify)
-        </div>
+            <!-- Deuxième ligne: Avancé & Pro -->
+            <div class="row row-2">
+                <div class="card card-avance">
+                    <div class="card-header">
+                        <div class="card-icon">🚀</div>
+                        <div>
+                            <div class="card-level">Avancé</div>
+                            <div class="card-description">Optimisé pour conversion</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-price">
+                        <div class="price-amount">2K - 5K€</div>
+                        <div class="price-subtitle">Expert Shopify</div>
+                    </div>
+                    
+                    <ul class="features">
+                        <li>Tout du niveau Standard</li>
+                        <li>Thème premium</li>
+                        <li>Optimisation SEO avancée</li>
+                        <li>Pages légales & blog</li>
+                        <li>Apps essentielles intégrées</li>
+                        <li>Optimisation mobile</li>
+                    </ul>
+                </div>
 
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Niveau</th>
-                        <th>Description</th>
-                        <th>Inclus</th>
-                        <th style="text-align: right;">Prix</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="level-cell level-1">
-                            1 – Basique <span class="emoji">⚪</span>
-                        </td>
-                        <td class="description-cell">
-                            Mise en place rapide d'une boutique Shopify avec thème gratuit
-                        </td>
-                        <td class="features-cell">
-                            <ul class="features-list">
-                                <li>Installation Shopify</li>
-                                <li>Paramétrage paiements et livraisons</li>
-                                <li>Thème gratuit installé et logo</li>
-                                <li>Ajout manuel de quelques produits</li>
-                            </ul>
-                        </td>
-                        <td class="price-cell">
-                            <div class="price-main">300 – 800 €</div>
-                            <div class="price-sub">(freelance débutant)</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="level-cell level-2">
-                            2 – Standard <span class="emoji">🎯</span>
-                        </td>
-                        <td class="description-cell">
-                            Site prêt à vendre avec personnalisation simple
-                        </td>
-                        <td class="features-cell">
-                            <ul class="features-list">
-                                <li>Tout du niveau 1</li>
-                                <li>Personnalisation couleurs/typos</li>
-                                <li>Paramétrage collections</li>
-                                <li>SEO basique (titres, méta-descriptions)</li>
-                                <li>Formation rapide d'utilisation</li>
-                            </ul>
-                        </td>
-                        <td class="price-cell">
-                            <div class="price-main">800 – 2 000 €</div>
-                            <div class="price-sub">(freelance confirmé)</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="level-cell level-3">
-                            3 – Avancé <span class="emoji">🚀</span>
-                        </td>
-                        <td class="description-cell">
-                            Boutique optimisée pour conversion
-                        </td>
-                        <td class="features-cell">
-                            <ul class="features-list">
-                                <li>Tout du niveau 2</li>
-                                <li>Thème premium</li>
-                                <li>Optimisation SEO avancée</li>
-                                <li>Pages légales & blog</li>
-                                <li>Intégration apps essentielles (upsell, avis clients, e-mailing)</li>
-                                <li>Optimisation mobile</li>
-                            </ul>
-                        </td>
-                        <td class="price-cell">
-                            <div class="price-main">2 000 – 5 000 €</div>
-                            <div class="price-sub">(expert Shopify / petite agence)</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="level-cell level-4">
-                            4 – Pro <span class="emoji">💚</span>
-                        </td>
-                        <td class="description-cell">
-                            Site e-commerce personnalisé & orienté marketing
-                        </td>
-                        <td class="features-cell">
-                            <ul class="features-list">
-                                <li>Tout du niveau 3</li>
-                                <li>Design sur mesure</li>
-                                <li>Automatisations marketing (abandon panier, newsletters)</li>
-                                <li>Création visuels produits</li>
-                                <li>Optimisation vitesse de chargement</li>
-                                <li>Tracking analytics & pixels pub</li>
-                            </ul>
-                        </td>
-                        <td class="price-cell">
-                            <div class="price-main">5 000 – 10 000 €</div>
-                            <div class="price-sub">(agence spécialisée)</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="level-cell level-5">
-                            5 – Élite <span class="emoji">🚀</span>
-                        </td>
-                        <td class="description-cell">
-                            Solution e-commerce complète & scalable
-                        </td>
-                        <td class="features-cell">
-                            <ul class="features-list">
-                                <li>Tout du niveau 4</li>
-                                <li>Développement de fonctionnalités custom (configurateurs, abonnement produits...)</li>
-                                <li>Stratégie SEO longue traîne</li>
-                                <li>Shooting produit + vidéo promo</li>
-                                <li>Gestion campagnes pub initiales (Google Ads, Meta)</li>
-                                <li>Formation + suivi sur plusieurs mois</li>
-                            </ul>
-                        </td>
-                        <td class="price-cell">
-                            <div class="price-main">10 000 – 30 000 €+</div>
-                            <div class="price-sub">(grosse agence e-commerce)</div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                <div class="card card-pro">
+                    <div class="card-header">
+                        <div class="card-icon">💚</div>
+                        <div>
+                            <div class="card-level">Pro</div>
+                            <div class="card-description">Personnalisé & marketing</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-price">
+                        <div class="price-amount">5K - 10K€</div>
+                        <div class="price-subtitle">Agence spécialisée</div>
+                    </div>
+                    
+                    <ul class="features">
+                        <li>Tout du niveau Avancé</li>
+                        <li>Design sur mesure</li>
+                        <li>Automatisations marketing</li>
+                        <li>Création visuels produits</li>
+                        <li>Optimisation vitesse</li>
+                        <li>Tracking analytics & pixels</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Troisième ligne: Élite -->
+            <div class="row row-1">
+                <div class="card card-elite">
+                    <div class="elite-badge">Premium</div>
+                    <div class="card-header">
+                        <div class="card-icon">👑</div>
+                        <div>
+                            <div class="card-level">Élite</div>
+                            <div class="card-description">Solution complète & scalable</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-price">
+                        <div class="price-amount">10K - 30K€+</div>
+                        <div class="price-subtitle">Grosse agence e-commerce</div>
+                    </div>
+                    
+                    <ul class="features">
+                        <li>Tout du niveau Pro</li>
+                        <li>Fonctionnalités custom développées</li>
+                        <li>Stratégie SEO longue traîne</li>
+                        <li>Shooting produit + vidéo promo</li>
+                        <li>Campagnes publicitaires initiales</li>
+                        <li>Formation & suivi plusieurs mois</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </body>
