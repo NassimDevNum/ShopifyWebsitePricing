@@ -3,43 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crescendo - Boutiques Shopify qui Convertissent</title>
+    <title>Crescendo - Boutiques Shopify pour Marques de Vêtements</title>
     
     <!-- Google Fonts Import -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* ===== VARIABLES CSS CYBER-LUXE ===== */
+        /* ===== VARIABLES TEXTILE ===== */
         :root {
-            /* Palette Cyber Premium */
-            --noir-cosmos: #0a0a0f;
-            --violet-profond: #1a0933;
-            --violet-royal: #2d1b69;
-            --cyan-electrique: #00f5ff;
-            --magenta-neon: #ff006e;
-            --blanc-cristal: #f8fafc;
-            --gris-metal: #64748b;
+            /* Palette Textile */
+            --bronco: #a9a196;
+            --armadillo: #413b33;
+            --kabul: #5a5042;
+            --judge-gray: #544335;
+            --blanc-textile: #faf9f7;
+            --blanc-pur: #ffffff;
             
-            /* Gradients Cosmiques */
-            --gradient-cosmos: radial-gradient(ellipse at center, var(--violet-profond) 0%, var(--noir-cosmos) 70%);
-            --gradient-neon: linear-gradient(135deg, var(--cyan-electrique) 0%, var(--magenta-neon) 100%);
-            --gradient-cards: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(255, 0, 110, 0.05));
-            --gradient-texte: linear-gradient(135deg, var(--cyan-electrique), var(--blanc-cristal), var(--magenta-neon));
+            /* Gradients Naturels */
+            --gradient-principal: linear-gradient(135deg, var(--bronco), var(--kabul));
+            --gradient-subtle: linear-gradient(135deg, var(--blanc-textile), var(--blanc-pur));
             
-            /* Effets Néon */
-            --neon-cyan: 0 0 20px var(--cyan-electrique), 0 0 40px var(--cyan-electrique), 0 0 60px var(--cyan-electrique);
-            --neon-magenta: 0 0 20px var(--magenta-neon), 0 0 40px var(--magenta-neon), 0 0 60px var(--magenta-neon);
-            --neon-subtle: 0 0 10px rgba(0, 245, 255, 0.3), 0 0 20px rgba(0, 245, 255, 0.2);
-            
-            /* Typographie Futuriste */
-            --font-cyber: 'Orbitron', monospace;
-            --font-clean: 'Inter', sans-serif;
-            --font-code: 'Fira Code', monospace;
+            /* Typographie Mode */
+            --font-elegant: 'Playfair Display', serif;
+            --font-moderne: 'Inter', sans-serif;
+            --font-tech: 'JetBrains Mono', monospace;
         }
 
-        /* ===== RESET & BASE STYLES ===== */
+        /* ===== RESET ===== */
         * {
             margin: 0;
             padding: 0;
@@ -47,15 +39,15 @@
         }
 
         body {
-            font-family: var(--font-clean);
-            background: var(--gradient-cosmos);
-            color: var(--blanc-cristal);
+            font-family: var(--font-moderne);
+            background: var(--gradient-subtle);
+            color: var(--armadillo);
             min-height: 100vh;
-            overflow-x: hidden;
+            line-height: 1.6;
             position: relative;
         }
 
-        /* ===== ÉTOILES ANIMÉES ===== */
+        /* ===== MOTIFS TEXTILE BACKGROUND ===== */
         body::before {
             content: '';
             position: fixed;
@@ -63,30 +55,89 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                radial-gradient(2px 2px at 20px 30px, var(--cyan-electrique), transparent),
-                radial-gradient(2px 2px at 40px 70px, var(--magenta-neon), transparent),
-                radial-gradient(1px 1px at 90px 40px, var(--blanc-cristal), transparent),
-                radial-gradient(1px 1px at 130px 80px, var(--cyan-electrique), transparent),
-                radial-gradient(2px 2px at 160px 30px, var(--magenta-neon), transparent);
-            background-repeat: repeat;
-            background-size: 200px 100px;
-            animation: etoiles 20s linear infinite;
-            opacity: 0.6;
+            opacity: 0.03;
             z-index: 1;
             pointer-events: none;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23413b33' fill-opacity='1'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm-20-18c9.941 0 18 8.059 18 18s-8.059 18-18 18S-8 39.941-8 30s8.059-18 18-18z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
-        /* ===== CONTAINER & LAYOUT ===== */
+        /* ===== MANNEQUIN BACKGROUND ===== */
+        body::after {
+            content: '';
+            position: fixed;
+            right: -5%;
+            top: 15%;
+            width: 250px;
+            height: 70%;
+            background: url('./pics/m.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.4;
+            z-index: 1;
+            pointer-events: none;
+            filter: blur(0.5px);
+        }
+
+        /* ===== ICÔNES COUTURE FLOTTANTES ===== */
+        .textile-icons {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .textile-icon {
+            position: absolute;
+            opacity: 0.5;
+            animation: float-textile 20s linear infinite;
+            width: 25px;
+            height: 25px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .textile-icon.pin {
+            top: 15%;
+            left: 8%;
+            background-image: url('./pics/a.png');
+            animation-delay: 0s;
+        }
+
+        .textile-icon.thread {
+            top: 60%;
+            right: 12%;
+            background-image: url('./pics/t.png');
+            animation-delay: 7s;
+        }
+
+        .textile-icon.needle {
+            bottom: 30%;
+            left: 15%;
+            background-image: url('./pics/da.png');
+            animation-delay: 14s;
+        }
+
+        .textile-icon.cushion {
+            top: 40%;
+            right: 25%;
+            background-image: url('./pics/c.png');
+            animation-delay: 10s;
+        }
+
+        /* ===== CONTAINER ===== */
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 50px 20px;
             position: relative;
             z-index: 10;
         }
 
-        /* ===== HEADER STYLES CYBER ===== */
+        /* ===== HEADER ÉLÉGANT ===== */
         .header {
             text-align: center;
             margin-bottom: 80px;
@@ -99,74 +150,69 @@
             top: -30px;
             left: 50%;
             transform: translateX(-50%);
-            width: 200px;
+            width: 120px;
             height: 2px;
-            background: var(--gradient-neon);
-            border-radius: 2px;
-            box-shadow: var(--neon-subtle);
-            animation: pulse-neon 3s ease-in-out infinite;
+            background: var(--gradient-principal);
+            border-radius: 1px;
         }
 
         .title {
-            font-family: var(--font-cyber);
-            font-size: clamp(2.8rem, 6vw, 5rem);
-            font-weight: 800;
-            background: var(--gradient-texte);
-            background-size: 400% 400%;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 30px;
-            text-shadow: var(--neon-subtle);
-            animation: gradient-cosmic 4s ease infinite;
-            letter-spacing: 2px;
+            font-family: var(--font-elegant);
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            font-weight: 600;
+            color: var(--armadillo);
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            line-height: 1.1;
         }
 
         .subtitle {
-            font-family: var(--font-clean);
-            font-size: 1.4rem;
-            color: var(--gris-metal);
-            font-weight: 300;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            opacity: 0.9;
+            font-family: var(--font-moderne);
+            font-size: 1.3rem;
+            color: var(--kabul);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
         }
 
-        /* ===== PRICING GRID ===== */
+        .tagline {
+            font-family: var(--font-moderne);
+            font-size: 1rem;
+            color: var(--judge-gray);
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        /* ===== GRILLE SIMPLE ===== */
         .pricing-grid {
             display: grid;
-            gap: 50px;
+            gap: 40px;
             margin-bottom: 80px;
         }
 
         .row {
             display: grid;
-            gap: 40px;
+            gap: 30px;
         }
 
         .row-3 {
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         }
 
         .row-1 {
             display: flex;
             justify-content: center;
-            align-items: center;
         }
 
-        /* ===== CARDS CYBER PREMIUM ===== */
+        /* ===== CARTES TEXTILE ===== */
         .card {
-            background: rgba(26, 9, 51, 0.4);
-            border-radius: 28px;
-            padding: 45px;
+            background: var(--blanc-pur);
+            border-radius: 16px;
+            padding: 40px;
             position: relative;
-            backdrop-filter: blur(25px);
-            border: 1px solid rgba(0, 245, 255, 0.2);
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            overflow: hidden;
-            box-shadow: 
-                0 25px 50px rgba(0, 0, 0, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(169, 161, 150, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(65, 59, 51, 0.08);
         }
 
         .card::before {
@@ -175,191 +221,167 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
+            height: 4px;
             background: var(--gradient);
-            border-radius: 28px 28px 0 0;
-            box-shadow: var(--neon-subtle);
-        }
-
-        .card::after {
-            content: '';
-            position: absolute;
-            top: -100%;
-            left: -100%;
-            width: 300%;
-            height: 300%;
-            background: conic-gradient(from 0deg, transparent, rgba(0, 245, 255, 0.1), transparent);
-            opacity: 0;
-            transition: all 0.6s ease;
-            pointer-events: none;
-            animation: rotation 10s linear infinite;
-        }
-
-        .card:hover::after {
-            opacity: 1;
+            border-radius: 16px 16px 0 0;
         }
 
         .card:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 
-                0 40px 80px rgba(0, 0, 0, 0.6),
-                0 0 40px rgba(0, 245, 255, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            border-color: rgba(0, 245, 255, 0.5);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(65, 59, 51, 0.12);
+            border-color: rgba(169, 161, 150, 0.3);
         }
 
-        /* ===== CARD VARIANTS CYBER ===== */
+        /* ===== VARIANTES CARTES ===== */
         .card-basique { 
-            --gradient: linear-gradient(90deg, var(--cyan-electrique), var(--violet-royal));
+            --gradient: linear-gradient(90deg, var(--bronco), var(--kabul));
         }
 
         .card-standard { 
-            --gradient: linear-gradient(90deg, var(--magenta-neon), var(--cyan-electrique));
+            --gradient: linear-gradient(90deg, var(--kabul), var(--judge-gray));
         }
 
         .card-avance { 
-            --gradient: linear-gradient(90deg, var(--violet-royal), var(--magenta-neon));
+            --gradient: linear-gradient(90deg, var(--judge-gray), var(--armadillo));
         }
 
         .card-elite { 
-            --gradient: var(--gradient-neon);
-            background: rgba(26, 9, 51, 0.6);
-            border: 2px solid rgba(0, 245, 255, 0.4);
-            max-width: 650px;
-            box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.6),
-                0 0 60px rgba(0, 245, 255, 0.1);
+            --gradient: var(--gradient-principal);
+            background: linear-gradient(135deg, var(--blanc-pur), rgba(169, 161, 150, 0.02));
+            border: 2px solid rgba(169, 161, 150, 0.25);
+            max-width: 600px;
         }
 
-        /* ===== CARD CONTENT ===== */
+        /* ===== CONTENU CARTES ===== */
         .card-header {
             display: flex;
             align-items: center;
             gap: 20px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .card-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 20px;
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
             background: var(--gradient);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            box-shadow: var(--neon-subtle);
-            animation: float-icon 3s ease-in-out infinite;
+            font-size: 22px;
+            color: var(--blanc-pur);
+            box-shadow: 0 4px 12px rgba(65, 59, 51, 0.15);
+            background-size: 60%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .card-basique .card-icon {
+            background-image: url('./pics/a.png');
+        }
+
+        .card-standard .card-icon {
+            background-image: url('./pics/t.png');
+        }
+
+        .card-avance .card-icon {
+            background-image: url('./pics/c.png');
+        }
+
+        .card-elite .card-icon {
+            background-image: url('./pics/da.png');
         }
 
         .card-level {
-            font-family: var(--font-cyber);
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--blanc-cristal);
+            font-family: var(--font-elegant);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--armadillo);
             margin-bottom: 8px;
-            letter-spacing: 1px;
+            letter-spacing: -0.5px;
         }
 
         .card-description {
-            font-family: var(--font-clean);
             font-size: 1rem;
-            color: var(--gris-metal);
+            color: var(--kabul);
             font-weight: 400;
             line-height: 1.4;
         }
 
-        /* ===== PRICING SECTION PREMIUM ===== */
+        /* ===== SECTION PRIX ===== */
         .card-price {
             text-align: center;
-            margin: 35px 0;
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            border: 1px solid rgba(0, 245, 255, 0.1);
-            backdrop-filter: blur(15px);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(250, 249, 247, 0.6);
+            border-radius: 12px;
+            border: 1px solid rgba(169, 161, 150, 0.15);
         }
 
         .price-amount {
-            font-family: var(--font-code);
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--gradient-neon);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-            text-shadow: var(--neon-subtle);
-            animation: glow-pulse 2s ease-in-out infinite;
+            font-family: var(--font-tech);
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--armadillo);
+            margin-bottom: 8px;
+            letter-spacing: -1px;
         }
 
         .price-subtitle {
-            font-family: var(--font-clean);
-            font-size: 0.95rem;
-            color: var(--gris-metal);
-            letter-spacing: 1px;
+            font-size: 0.9rem;
+            color: var(--judge-gray);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        /* ===== FEATURES LIST CYBER ===== */
+        /* ===== LISTE FEATURES ===== */
         .features {
             list-style: none;
         }
 
         .features li {
             display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-            padding: 12px 0;
-            font-size: 1rem;
-            color: var(--blanc-cristal);
-            transition: all 0.3s ease;
-        }
-
-        .features li:hover {
-            color: var(--cyan-electrique);
-            transform: translateX(5px);
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 8px 0;
+            font-size: 0.95rem;
+            color: var(--armadillo);
+            line-height: 1.5;
         }
 
         .features li::before {
-            content: '◆';
-            font-size: 12px;
-            color: var(--cyan-electrique);
-            text-shadow: var(--neon-subtle);
+            content: '✂';
+            color: var(--bronco);
+            font-size: 14px;
+            margin-top: 2px;
+            flex-shrink: 0;
         }
 
         .card-elite .features li::before {
-            content: '◈';
-            color: var(--magenta-neon);
+            content: '🧵';
         }
 
-        /* ===== HERO SECTION CYBER ===== */
+        /* ===== SECTION HERO ===== */
         .hero-section {
             margin: 50px 0 80px 0;
-            padding: 0;
         }
 
         .personal-intro {
             display: flex;
             align-items: center;
             gap: 50px;
-            background: rgba(26, 9, 51, 0.4);
-            border-radius: 30px;
+            background: var(--blanc-pur);
+            border-radius: 20px;
             padding: 50px;
-            backdrop-filter: blur(25px);
-            border: 1px solid rgba(0, 245, 255, 0.2);
-            box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
+            border: 1px solid rgba(169, 161, 150, 0.2);
+            box-shadow: 0 12px 30px rgba(65, 59, 51, 0.08);
+            transition: transform 0.3s ease;
         }
 
         .personal-intro:hover {
-            transform: translateY(-8px);
-            box-shadow: 
-                0 40px 80px rgba(0, 0, 0, 0.5),
-                0 0 40px rgba(0, 245, 255, 0.1);
+            transform: translateY(-5px);
         }
 
         .avatar-container {
@@ -368,224 +390,124 @@
         }
 
         .avatar {
-            width: 140px;
-            height: 160px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            border: 4px solid var(--cyan-electrique);
-            box-shadow: 
-                0 15px 35px rgba(0, 0, 0, 0.4),
-                0 0 30px rgba(0, 245, 255, 0.3);
-            transition: all 0.4s ease;
+            border: 4px solid var(--bronco);
+            box-shadow: 0 8px 25px rgba(169, 161, 150, 0.25);
+            transition: transform 0.3s ease;
         }
 
         .avatar:hover {
-            transform: scale(1.1);
-            border-color: var(--magenta-neon);
-            box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.5),
-                0 0 40px var(--neon-magenta);
+            transform: scale(1.05);
         }
 
         .status-badge {
             position: absolute;
-            bottom: 15px;
-            right: 15px;
-            background: var(--gradient-neon);
-            color: var(--blanc-cristal);
+            bottom: 12px;
+            right: 12px;
+            background: var(--gradient-principal);
+            color: var(--blanc-pur);
             padding: 6px 12px;
             border-radius: 15px;
-            font-family: var(--font-code);
+            font-family: var(--font-tech);
             font-size: 0.75rem;
-            font-weight: 600;
-            box-shadow: var(--neon-subtle);
-            animation: pulse-neon 2s ease-in-out infinite;
-            letter-spacing: 1px;
-        }
-
-        .intro-content {
-            flex: 1;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .intro-content h2 {
-            font-family: var(--font-cyber);
-            font-size: 2.4rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--blanc-cristal);
-            letter-spacing: 1px;
+            font-family: var(--font-elegant);
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--armadillo);
+            letter-spacing: -0.5px;
         }
 
         .highlight {
-            background: var(--gradient-neon);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            text-shadow: var(--neon-subtle);
+            color: var(--kabul);
+            font-weight: 600;
         }
 
-        .tagline {
-            font-family: var(--font-clean);
-            font-size: 1.3rem;
-            color: var(--cyan-electrique);
-            margin-bottom: 20px;
+        .intro-tagline {
+            font-size: 1.1rem;
+            color: var(--bronco);
+            margin-bottom: 18px;
             font-weight: 500;
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .description {
-            font-size: 1.1rem;
-            color: var(--gris-metal);
+            font-size: 1.05rem;
+            color: var(--judge-gray);
             line-height: 1.7;
             margin-bottom: 25px;
         }
 
         .description strong {
-            color: var(--blanc-cristal);
+            color: var(--armadillo);
             font-weight: 600;
         }
 
         .social-proof {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         .social-proof span {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 12px 20px;
+            background: rgba(250, 249, 247, 0.8);
+            padding: 10px 18px;
             border-radius: 25px;
-            font-size: 0.95rem;
-            color: var(--blanc-cristal);
-            border: 1px solid rgba(0, 245, 255, 0.2);
+            font-size: 0.9rem;
+            color: var(--armadillo);
+            border: 1px solid rgba(169, 161, 150, 0.2);
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            font-weight: 500;
         }
 
         .social-proof span:hover {
-            background: rgba(0, 245, 255, 0.1);
-            transform: translateY(-3px);
-            box-shadow: var(--neon-subtle);
+            background: rgba(169, 161, 150, 0.1);
+            transform: translateY(-2px);
         }
 
-        /* ===== PARTICULES COSMIQUES ===== */
-        .floating-elements {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 2;
-        }
-
-        .floating-circle {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 245, 255, 0.2), transparent);
-            animation: float-cosmic 12s ease-in-out infinite;
-        }
-
-        .floating-circle:nth-child(1) {
-            width: 150px;
-            height: 150px;
-            top: 10%;
-            left: 5%;
-            animation-delay: 0s;
-            background: radial-gradient(circle, rgba(0, 245, 255, 0.15), transparent);
-        }
-
-        .floating-circle:nth-child(2) {
-            width: 100px;
-            height: 100px;
-            top: 60%;
-            right: 8%;
-            animation-delay: 4s;
-            background: radial-gradient(circle, rgba(255, 0, 110, 0.15), transparent);
-        }
-
-        .floating-circle:nth-child(3) {
-            width: 80px;
-            height: 80px;
-            bottom: 20%;
-            left: 15%;
-            animation-delay: 8s;
-            background: radial-gradient(circle, rgba(0, 245, 255, 0.1), transparent);
-        }
-
-        /* ===== ELITE BADGE PREMIUM ===== */
+        /* ===== BADGE ÉLÉGANT ===== */
         .elite-badge {
             position: absolute;
-            top: -10px;
-            right: 10px;
-            background: var(--gradient-neon);
-            color: var(--blanc-cristal);
-            padding: 10px 20px;
+            top: -12px;
+            right: 25px;
+            background: var(--gradient-principal);
+            color: var(--blanc-pur);
+            padding: 8px 20px;
             border-radius: 25px;
-            font-family: var(--font-code);
-            font-size: 0.85rem;
-            font-weight: 700;
+            font-family: var(--font-tech);
+            font-size: 0.8rem;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: var(--neon-subtle);
-            animation: pulse-neon 2s ease-in-out infinite;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(169, 161, 150, 0.3);
         }
 
-        /* ===== ANIMATIONS CYBER ===== */
-        @keyframes pulse-neon {
-            0%, 100% { 
-                transform: scale(1);
-                box-shadow: var(--neon-subtle);
+        /* ===== ANIMATIONS DOUCES ===== */
+        @keyframes float-textile {
+            0% { 
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.04;
             }
             50% { 
-                transform: scale(1.05);
-                box-shadow: var(--neon-cyan);
+                transform: translateY(-15px) rotate(180deg);
+                opacity: 0.08;
+            }
+            100% { 
+                transform: translateY(-30px) rotate(360deg);
+                opacity: 0.02;
             }
         }
 
-        @keyframes gradient-cosmic {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes rotation {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes float-cosmic {
-            0%, 100% { 
-                transform: translateY(0px) translateX(0px) rotate(0deg);
-                opacity: 0.3;
-            }
-            33% { 
-                transform: translateY(-30px) translateX(20px) rotate(120deg);
-                opacity: 0.7;
-            }
-            66% { 
-                transform: translateY(15px) translateX(-15px) rotate(240deg);
-                opacity: 0.4;
-            }
-        }
-
-        @keyframes float-icon {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-        }
-
-        @keyframes glow-pulse {
-            0%, 100% { filter: brightness(1); }
-            50% { filter: brightness(1.3); }
-        }
-
-        @keyframes etoiles {
-            from { transform: translateY(0px); }
-            to { transform: translateY(-100px); }
-        }
-
-        /* ===== RESPONSIVE CYBER ===== */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 1200px) {
             .row-3 {
                 grid-template-columns: 1fr;
@@ -596,186 +518,181 @@
                 text-align: center;
                 gap: 30px;
             }
-            
-            .social-proof {
-                justify-content: center;
-            }
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 20px 15px;
+                padding: 30px 15px;
             }
             
             .card {
                 padding: 30px;
-                margin: 0 10px;
             }
             
             .price-amount {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             .personal-intro {
-                padding: 30px;
-                gap: 25px;
+                padding: 35px;
             }
             
             .avatar {
-                width: 120px;
-                height: 160px;
+                width: 110px;
+                height: 110px;
             }
             
             .intro-content h2 {
                 font-size: 1.8rem;
             }
             
-            .floating-circle {
-                opacity: 0.2;
+            .social-proof {
+                justify-content: center;
             }
             
-            body::before {
-                opacity: 0.3;
+            .textile-icon {
+                opacity: 0.2;
             }
         }
     </style>
 </head>
 <body>
-    <div class="floating-elements">
-        <div class="floating-circle"></div>
-        <div class="floating-circle"></div>
-        <div class="floating-circle"></div>
+    <!-- Icônes Textile Flottantes -->
+    <div class="textile-icons">
+        <div class="textile-icon pin"></div>
+        <div class="textile-icon thread"></div>
+        <div class="textile-icon needle"></div>
+        <div class="textile-icon cushion"></div>
     </div>
 
     <div class="container">
         <div class="header">
-            <h1 class="title">CRESCENDO</h1>
-            <p class="subtitle">Boutiques Shopify • Conversion • Performance</p> 
+            <h1 class="title">Crescendo</h1>
+            <p class="subtitle">Boutiques Shopify pour Marques de Vêtements</p>
+            <p class="tagline">De la création à l'optimisation • Spécialiste Textile depuis 3 ans</p>
         </div>
 
         <div class="hero-section">
             <div class="personal-intro">
                 <div class="avatar-container">
                     <img src="./pics/niceB1.jpg" alt="Nassim Lahlouh" class="avatar">
-                    <div class="status-badge">ONLINE</div>
+                    <div class="status-badge">Disponible</div>
                 </div>
                 <div class="intro-content">
-                    <h2>Nassim <span class="highlight">• Expert Shopify</span></h2>
-                    <p class="tagline">3 ANS • E-COMMERCE • TEXTILE PREMIUM</p>
+                    <h2>Nassim <span class="highlight">• Expert Shopify Textile</span></h2>
+                    <p class="intro-tagline">Mode • E-commerce • Performance</p>
                     <p class="description">
-                        Je transforme vos concepts en <strong>machines à ventes Shopify</strong>. 
-                        Spécialisation textile haute performance avec une approche 360° : 
-                        <strong>Développement • Design • SEO • Conversion • Analytics</strong>
+                        Je transforme vos créations textiles en <strong>boutiques Shopify performantes</strong>. 
+                        Spécialisé dans l'univers de la mode avec une approche 360° : 
+                        <strong>Design • Conversion • SEO • Photo produit • Stratégie</strong>
                     </p>
                     <div class="social-proof">
-                        <span>⭐ 4.9/5 RATING</span>
-                        <span>⚡ LIVRAISON 7-14J</span>
-                        <span>🔒 SUPPORT PREMIUM</span>
+                        <span>⭐ 4.9/5 • 23 avis</span>
+                        <span>🚀 Livraison 7-14 jours</span>
+                        <span>💬 Support inclus</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="pricing-grid">
-            <!-- Première ligne: Basique, Standard & Avancé -->
             <div class="row row-3">
                 <div class="card card-basique">
                     <div class="card-header">
-                        <div class="card-icon">⚡</div>
+                        <div class="card-icon"></div>
                         <div>
-                            <div class="card-level">STARTER</div>
-                            <div class="card-description">Lancement rapide et efficace</div>
+                            <div class="card-level">Lancement</div>
+                            <div class="card-description">Votre première boutique textile en ligne</div>
                         </div>
                     </div>
                     
                     <div class="card-price">
                         <div class="price-amount">900€</div>
-                        <div class="price-subtitle">SETUP COMPLET • 3-5 JOURS</div>
+                        <div class="price-subtitle">Setup complet • 3-5 jours</div>
                     </div>
                     
                     <ul class="features">
-                        <li>Installation Shopify complète</li>
+                        <li>Installation Shopify optimisée mode</li>
                         <li>Paramétrage paiements & livraisons</li>
-                        <li>Thème professionnel + logo</li>
-                        <li>Jusqu'à 10 produits optimisés</li>
+                        <li>Thème adapté textile + branding</li>
+                        <li>Jusqu'à 10 produits avec descriptions</li>
                         <li>Formation utilisation incluse</li>
                     </ul>
                 </div>
 
                 <div class="card card-standard">
-                    <div class="elite-badge">BESTSELLER</div>
+                    <div class="elite-badge">Populaire</div>
                     <div class="card-header">    
-                        <div class="card-icon">🚀</div>
+                        <div class="card-icon"></div>
                         <div>
-                            <div class="card-level">PROFESSIONAL</div>
-                            <div class="card-description">Solution complète prête à vendre</div>
+                            <div class="card-level">Professionnel</div>
+                            <div class="card-description">Boutique complète prête à vendre</div>
                         </div>
                     </div>
                     
                     <div class="card-price">
                         <div class="price-amount">2500€</div>
-                        <div class="price-subtitle">BUSINESS READY • 7-10 JOURS</div>
+                        <div class="price-subtitle">Business ready • 7-10 jours</div>
                     </div>
                     
                     <ul class="features">
-                        <li>Tout du package Starter inclus</li>
-                        <li>Design personnalisé brand-focused</li>
-                        <li>Architecture collections avancée</li>
-                        <li>SEO on-page + méta-données</li>
-                        <li>Analytics + Search Console</li>
+                        <li>Tout du package Lancement inclus</li>
+                        <li>Design personnalisé selon votre marque</li>
+                        <li>Collections & filtres avancés</li>
+                        <li>SEO textile + fiches produits optimisées</li>
+                        <li>Google Analytics + Search Console</li>
                         <li>Formation complète 1h visio</li>
                     </ul>
                 </div>
 
                 <div class="card card-avance">
                     <div class="card-header">
-                        <div class="card-icon">👑</div>
+                        <div class="card-icon"></div>
                         <div>
-                            <div class="card-level">ENTERPRISE</div>
-                            <div class="card-description">Performance & conversion maximales</div>
+                            <div class="card-level">Premium</div>
+                            <div class="card-description">Performance maximale pour grandes marques</div>
                         </div>
                     </div>
                     
                     <div class="card-price">
                         <div class="price-amount">4500€</div>
-                        <div class="price-subtitle">PREMIUM • 10-14 JOURS</div>
+                        <div class="price-subtitle">Haut de gamme • 10-14 jours</div>
                     </div>
                     
                     <ul class="features">
-                        <li>Tout du package Professional</li>
-                        <li>Thème premium sur-mesure</li>
-                        <li>SEO technique + stratégie contenu</li>
-                        <li>Apps premium intégrées</li>
-                        <li>Optimisation mobile native</li>
+                        <li>Tout du package Professionnel</li>
+                        <li>Thème sur-mesure haute couture</li>
+                        <li>SEO technique + stratégie contenu mode</li>
+                        <li>Apps premium (avis, wishlist, variants)</li>
+                        <li>Optimisation mobile & vitesse</li>
                         <li>Support prioritaire 3 mois</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Deuxième ligne: Consulting Elite -->
             <div class="row row-1">
                 <div class="card card-elite">
-                    <div class="elite-badge">EXPERT</div>
+                    <div class="elite-badge">Expert</div>
                     <div class="card-header">
-                        <div class="card-icon">🔬</div>
+                        <div class="card-icon"></div>
                         <div>
-                            <div class="card-level">DIAGNOSTIC EXPERT</div>
-                            <div class="card-description">Audit technique & stratégique pour sites existants</div>
+                            <div class="card-level">Audit & Optimisation</div>
+                            <div class="card-description">Pour marques existantes qui stagnent</div>
                         </div>
                     </div>
                     
                     <div class="card-price">
-                        <div class="price-amount">SUR DEVIS</div>
-                        <div class="price-subtitle">CONSULTATION GRATUITE • TJM 500€ • MISSION FLEXIBLE</div>
+                        <div class="price-amount">Sur Devis</div>
+                        <div class="price-subtitle">Consultation gratuite • TJM 500€ • Mission flexible</div>
                     </div>
                     
                     <ul class="features">
                         <li>Session découverte offerte 30min</li>
-                        <li>Audit technique & UX approfondi</li>
-                        <li>Analyse comportementale visiteurs</li>
-                        <li>Benchmark concurrentiel détaillé</li>
-                        <li>Stratégie d'optimisation sur-mesure</li>
-                        <li>Accompagnement personnalisé évolutif</li>
+                        <li>Audit UX spécialisé mode & textile</li>
+                        <li>Analyse comportementale clients</li>
+                        <li>Benchmark concurrentiel secteur</li>
+                        <li>Stratégie conversion sur-mesure</li>
+                        <li>Accompagnement évolutif selon besoins</li>
                     </ul>
                 </div>
             </div>
