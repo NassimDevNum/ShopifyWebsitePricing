@@ -557,27 +557,46 @@
             font-style: italic;
         }
 
-
         .reference-metrics {
-            background-image: url('./pics/kmpbg.jpg');
-            background-image: url('./pics/kmpbg.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
             display: flex;
             gap: 30px;
             margin-bottom: 25px;
-            padding: 20px;
-            background: rgba(250, 249, 247, 0.8);
+            padding: 25px;
+            background-size: cover;
+            background-position: center;
             border-radius: 12px;
-            border: 1px solid rgba(169, 161, 150, 0.1);
+            border: 1px solid rgba(169, 161, 150, 0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 120px;
         }
 
+        .reference-metrics::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(250, 249, 247, 0.68);
+            backdrop-filter: blur(1px);
+            border-radius: 12px;
+            z-index: 1;
+        }
 
-        
+        .reference-card:nth-child(1) .reference-metrics {
+            background-image: url('./pics/kmpbg.jpg');
+        }
+
+        .reference-card:nth-child(2) .reference-metrics {
+            background-image: url('./pics/ivybg.jpg');
+        }
+
         .metric {
             text-align: center;
             flex: 1;
+            position: relative;
+            z-index: 2;
         }
 
         .metric-number {
@@ -921,7 +940,6 @@
                     </div>
                     
                     <div class="reference-metrics">
-
                         <div class="metric">
                             <span class="metric-number">+180%</span>
                             <span class="metric-label">Ventes en ligne</span>
