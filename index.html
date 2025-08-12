@@ -175,14 +175,6 @@
             margin-bottom: 15px;
         }
 
-        /* .tagline {
-            font-family: var(--font-moderne);
-            font-size: 1rem;
-            color: var(--judge-gray);
-            font-weight: 300;
-            font-style: italic;
-        } */
-
         /* ===== GRILLE SIMPLE ===== */
         .pricing-grid {
             display: grid;
@@ -391,7 +383,6 @@
 
         .avatar {
             width: 130px;
-            /*height: 130px;*/
             border-radius: 50%;
             border: 4px solid var(--bronco);
             box-shadow: 0 8px 25px rgba(169, 161, 150, 0.25);
@@ -405,7 +396,6 @@
         .status-badge {
             position: absolute;
             bottom: 100px;
-            /*right: 12px;*/
             background: var(--gradient-principal);
             color: var(--blanc-pur);
             padding: 6px 12px;
@@ -430,15 +420,6 @@
             color: var(--kabul);
             font-weight: 600;
         }
-
-        /* .intro-tagline {
-            font-size: 1.1rem;
-            color: var(--bronco);
-            margin-bottom: 18px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        } */
 
         .description {
             font-size: 1.05rem;
@@ -472,6 +453,129 @@
         .social-proof span:hover {
             background: rgba(169, 161, 150, 0.1);
             transform: translateY(-2px);
+        }
+
+        /* ===== SECTION IMPACT BUSINESS ===== */
+        .impact-section {
+            margin: 60px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, var(--blanc-pur), rgba(169, 161, 150, 0.05));
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 900px;
+            width: 100%;
+            border: 2px solid rgba(169, 161, 150, 0.2);
+            box-shadow: 0 15px 35px rgba(65, 59, 51, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .impact-header {
+            margin-bottom: 40px;
+        }
+
+        .impact-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--gradient-principal);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(169, 161, 150, 0.3);
+        }
+
+        .impact-icon img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .impact-header h3 {
+            font-family: var(--font-elegant);
+            font-size: 1.7rem;
+            color: var(--armadillo);
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .impact-header p {
+            color: var(--kabul);
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .impact-stat {
+            padding: 25px 20px;
+            background: rgba(250, 249, 247, 0.8);
+            border-radius: 15px;
+            border: 1px solid rgba(169, 161, 150, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .impact-stat:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(65, 59, 51, 0.1);
+        }
+
+        .stat-number {
+            font-family: var(--font-tech);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--armadillo);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-family: var(--font-elegant);
+            font-size: 1rem;
+            color: var(--kabul);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .stat-desc {
+            font-size: 0.85rem;
+            color: var(--judge-gray);
+            line-height: 1.4;
+        }
+
+        .impact-highlight {
+            background: var(--gradient-principal);
+            color: var(--blanc-pur);
+            padding: 25px;
+            border-radius: 15px;
+            font-size: 1rem;
+            line-height: 1.6;
+            box-shadow: 0 8px 25px rgba(169, 161, 150, 0.2);
+        }
+
+        .revenue-projection {
+            font-family: var(--font-tech);
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-top: 5px;
         }
 
         /* ===== BADGE ÉLÉGANT ===== */
@@ -552,6 +656,37 @@
             
             .textile-icon {
                 opacity: 0.2;
+            }
+            
+            .impact-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .impact-card {
+                padding: 35px 25px;
+            }
+            
+            .impact-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .impact-icon img {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .stat-label {
+                font-size: 0.9rem;
+            }
+            
+            .stat-desc {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -659,13 +794,51 @@
                     </div>
                     
                     <ul class="features">
-                        <li>Tout du package Professionnel</li>
+                        <li>Tout du package Boutique</li>
                         <li>Thème sur-mesure haute couture</li>
                         <li>SEO technique + stratégie contenu mode</li>
                         <li>Apps premium (avis, wishlist, variants)</li>
                         <li>Optimisation mobile & vitesse</li>
                         <li>Support prioritaire 3 mois</li>
                     </ul>
+                </div>
+            </div>
+
+            <!-- Section Impact Business -->
+            <div class="impact-section">
+                <div class="impact-card">
+                    <div class="impact-header">
+                        <div class="impact-icon">
+                            <img src="./pics/ci.png" alt="Impact Business" />
+                        </div>
+                        <h3>Impact Business Attendu</h3>
+                        <p>Résultats mesurables pour votre marque textile</p>
+                    </div>
+                    
+                    <div class="impact-grid">
+                        <div class="impact-stat">
+                            <div class="stat-number">20K€ → 100K€</div>
+                            <div class="stat-label">CA multiplié par 5</div>
+                            <div class="stat-desc">Résultat réel client textile</div>
+                        </div>
+                        
+                        <div class="impact-stat">
+                            <div class="stat-number">Trafic x2</div>
+                            <div class="stat-label">Doublé en 2 mois</div>
+                            <div class="stat-desc">Visibilité maximisée</div>
+                        </div>
+                        
+                        <div class="impact-stat">
+                            <div class="stat-number">Crédibilité Google</div>
+                            <div class="stat-label">Référencement premium</div>
+                            <div class="stat-desc">Confiance & légitimité</div>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-highlight">
+                        <strong>Add text</strong><br>
+                        <span class="revenue-projection">add text</span>
+                    </div>
                 </div>
             </div>
 
