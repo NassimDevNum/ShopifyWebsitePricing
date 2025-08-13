@@ -880,7 +880,203 @@
                 font-size: 0.8rem;
             }
         }
+
+        .faq-section {
+    margin: 80px 0;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faq-header h3 {
+    font-family: var(--font-elegant);
+    font-size: 2rem;
+    color: var(--armadillo);
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.faq-header p {
+    color: var(--kabul);
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.faq-container {
+    background: var(--blanc-pur);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(169, 161, 150, 0.2);
+    box-shadow: 0 12px 30px rgba(65, 59, 51, 0.08);
+}
+
+.faq-category {
+    margin-bottom: 35px;
+}
+
+.faq-category:last-child {
+    margin-bottom: 0;
+}
+
+.faq-category-title {
+    font-family: var(--font-tech);
+    font-size: 0.85rem;
+    color: var(--bronco);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(169, 161, 150, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.faq-category-title::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: var(--gradient-principal);
+    border-radius: 2px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    background: rgba(250, 249, 247, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba(169, 161, 150, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 5px 15px rgba(65, 59, 51, 0.08);
+}
+
+.faq-item.active {
+    background: var(--blanc-pur);
+    border-color: rgba(169, 161, 150, 0.25);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 20px 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-moderne);
+    font-size: 1rem;
+    color: var(--armadillo);
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--kabul);
+}
+
+.faq-icon {
+    font-size: 1.2rem;
+    color: var(--bronco);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 15px;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.faq-answer-content {
+    padding: 0 25px 20px 25px;
+    font-size: 0.95rem;
+    color: var(--judge-gray);
+    line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+}
+
+.faq-answer-content strong {
+    color: var(--armadillo);
+    font-weight: 600;
+}
+
+/* ===== RESPONSIVE FAQ ===== */
+@media (max-width: 768px) {
+    .faq-container {
+        padding: 30px 20px;
+    }
+    
+    .faq-question {
+        padding: 15px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .faq-answer-content {
+        padding: 0 20px 15px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .faq-header h3 {
+        font-size: 1.7rem;
+    }
+    
+    .faq-header p {
+        font-size: 1rem;
+    }
+}
+</style>
+
+<!-- ===== JAVASCRIPT À AJOUTER AVANT LA FERMETURE </body> ===== -->
+
     </style>
+
+    <script>
+// Gestion de l'accordéon FAQ
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            // Fermer les autres items de la même catégorie
+            const category = item.closest('.faq-category');
+            const otherItems = category.querySelectorAll('.faq-item');
+            
+            otherItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle l'item actuel
+            item.classList.toggle('active');
+        });
+    });
+});
+        </script>
+
+
+
 </head>
 <body>
     <!-- Icônes Textile Flottantes -->
@@ -923,7 +1119,7 @@
         <!-- Section Références -->
         <div class="references-section">
             <div class="references-header">
-                <h3>Ils nous font confiance</h3>
+                <h3>Ils me font confiance</h3>
                 <p>Marques textiles qui ont transformé leur business</p>
             </div>
             
@@ -934,15 +1130,15 @@
                             <img src="./pics/kmplogo.png" alt="Élégance Parisienne" />
                         </div>
                         <div class="brand-info">
-                            <h4>Élégance Parisienne</h4>
-                            <span class="brand-type">Prêt-à-porter féminin</span>
+                            <h4>Kilometre Paris</h4>
+                            <span class="brand-type">Marque de luxe</span>
                         </div>
                     </div>
                     
                     <div class="reference-metrics">
                         <div class="metric">
-                            <span class="metric-number">+180%</span>
-                            <span class="metric-label">Ventes en ligne</span>
+                            <span class="metric-number">x3</span>
+                            <span class="metric-label">Valeur du panier moyen</span>
                         </div>
                         <div class="metric">
                             <span class="metric-number">x3</span>
@@ -951,16 +1147,17 @@
                     </div>
                     
                     <blockquote class="reference-quote">
-                        "Nassim a transformé notre vision en une boutique qui cartonne. Le ROI a été immédiat !"
+                        "Notre précédent site a commencé à se faire vieux. Avec Nassim, les commandes ont été multipliées et le prix du panier moyen a triplé en 3 mois. Avec le site on est passé de 23 000€ à plus de 100 000€ en un an. <br><br>
+                        Des commandes complètement inattendues n'arrêtaient pas de s'enchaîner"
                     </blockquote>
                     
                     <div class="reference-author">
-                        <span class="author-name">Marie Dubois</span>
+                        <span class="author-name">Alexandra Senes</span>
                         <span class="author-title">Fondatrice</span>
                     </div>
                 </div>
                 
-                <div class="reference-card">
+                <!-- <div class="reference-card">
                     <div class="reference-header">
                         <div class="brand-logo">
                             <img src="./pics/logoIvy.PNG" alt="Atelier Moderne" />
@@ -990,7 +1187,7 @@
                         <span class="author-name">Thomas Martin</span>
                         <span class="author-title">Directeur Créatif</span>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -1094,15 +1291,15 @@
                         </div>
                         
                         <div class="impact-stat">
-                            <div class="stat-number">Crédibilité Google</div>
-                            <div class="stat-label">Référencement premium</div>
-                            <div class="stat-desc">Confiance & légitimité</div>
+                            <div class="stat-number">Confiance</div>
+                            <div class="stat-label">Crédibilité Google</div>
+                            <div class="stat-desc">Légitimité & éligibilité</div>
                         </div>
                     </div>
                     
                     <div class="impact-highlight">
-                        <strong>Add text</strong><br>
-                        <span class="revenue-projection">add text</span>
+                        <strong>Votre site textile stagne-t-il depuis des mois ?</strong><br>
+                        <span class="revenue-projection">Découvrons ensemble votre potentiel de croissance caché</span>
                     </div>
                 </div>
             </div>
@@ -1133,6 +1330,181 @@
                     </ul>
                 </div>
             </div>
+
+
+            <!-- add new section -->
+             <div class="faq-section">
+    <div class="faq-header">
+        <h3>Questions Fréquentes</h3>
+        <p>Tout ce que vous devez savoir sur notre expertise textile</p>
+    </div>
+    
+    <div class="faq-container">
+        <!-- Questions Techniques -->
+        <div class="faq-category">
+            <div class="faq-category-title">Questions Techniques</div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Gérez-vous les variants (tailles, couleurs, matières) ?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <strong>Absolument !</strong> La gestion des variants est essentielle pour le textile. Je configure des sélecteurs intuitifs pour tailles, couleurs et matières avec prévisualisation en temps réel. Les stocks sont gérés par variant et j'intègre des tableaux de correspondance pour faciliter le choix du client.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    La photographie produit est-elle incluse ?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Pour les packages <strong>Boutique et Entreprise</strong>, j'offre l'optimisation de vos photos existantes (recadrage, compression, formats multiples). Pour la prise de vue professionnelle, je peux vous recommander des photographes spécialisés mode avec qui je collabore régulièrement.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Comment optimisez-vous les collections saisonnières ?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Je structure votre boutique avec des <strong>collections automatisées</strong> qui se mettent à jour selon vos critères (nouveautés, saison, best-sellers). J'intègre aussi un système de pré-commande et de compte à rebours pour créer l'urgence lors des lancements de collection.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Questions Business -->
+        <div class="faq-category">
+            <div class="faq-category-title">Questions Business</div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Combien de révisions sont incluses ?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Chaque package inclut <strong>3 tours de révisions</strong> pendant la phase de développement. Après livraison, vous bénéficiez de 30 jours de garantie pour ajustements mineurs. Au-delà, je propose des forfaits maintenance ou interventions ponctuelles.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Proposez-vous la formation équipe ?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <strong>Oui !</strong> Tous les packages incluent une formation. Package Lancement : tutoriel vidéo personnalisé. Package Boutique : 1h de formation visio. Package Entreprise : jusqu'à 3h de formation pour votre équipe, avec documentation sur-mesure.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Quel délai pour voir des résultats ?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Les premiers résultats SEO apparaissent sous <strong>4 à 8 semaines</strong>. L'amélioration des conversions est immédiate grâce à l'optimisation UX. Mes clients constatent généralement une augmentation de 40% du trafic en 2 mois et un doublement des ventes en 3-4 mois.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Questions Secteur -->
+        <div class="faq-category">
+            <div class="faq-category-title">Questions Secteur</div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Avez-vous l'habitude des contraintes textiles ?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <strong>C'est ma spécialité depuis 3 ans !</strong> Je connais les spécificités du secteur : importance du toucher/matière, guides des tailles, retours fréquents, saisonnalité. Mon approche intègre ces contraintes avec des solutions adaptées (zoom haute définition, tableaux de mesures, politique retour claire).
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Intégrez-vous les guides des tailles ?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <strong>Systématiquement.</strong> J'intègre des guides de tailles interactifs avec conversions internationales (EU/UK/US), conseils morphologie et tableau de mesures détaillé. Possibilité d'ajouter un quiz de recommandation de taille pour réduire les retours.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Comment gérez-vous les précommandes/drops ?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Je configure des <strong>systèmes de lancement optimisés</strong> : compte à rebours, liste d'attente, notifications email automatiques, limitation des quantités. Pour les drops, j'intègre des apps spécialisées qui créent l'exclusivité et gèrent les files d'attente virtuelles.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Questions Pratiques -->
+        <div class="faq-category">
+            <div class="faq-category-title">Questions Pratiques</div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Travaillez-vous avec toutes tailles d'entreprises ?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <strong>Oui !</strong> Du créateur indépendant qui lance sa première collection à la marque établie qui veut passer au niveau supérieur. J'adapte mes solutions à votre stade de développement et vos objectifs. Chaque package est pensé pour une phase de croissance spécifique.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Les paiements mensuels sont-ils possibles ?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <strong>Plusieurs options disponibles :</strong> Paiement en 2 ou 3 fois sans frais pour tous les packages. Pour le package Entreprise, étalement possible jusqu'à 4 mensualités. Acompte de 30% à la commande, solde modulable selon vos préférences.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Que se passe-t-il après la livraison ?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Vous êtes <strong>100% propriétaire et autonome</strong>. Je vous fournis tous les accès, la documentation et la formation nécessaire. Garantie 30 jours incluse pour corrections. Ensuite, je reste disponible pour du support ponctuel ou un contrat de maintenance mensuel selon vos besoins.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
         </div>
     </div>
 </body>
