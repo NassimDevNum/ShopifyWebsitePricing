@@ -468,6 +468,66 @@
             transform: translateY(-2px);
         }
 
+            /* AJOUTE CE CSS DANS TON FICHIER STYLE */
+.social-proof {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.social-btn.whatsapp {
+    background: #25D366;
+}
+
+.social-btn.linkedin {
+    background: #0077B5;
+}
+
+.social-btn.instagram {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+}
+
+.social-btn svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Animation au survol */
+.social-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: left 0.5s ease;
+}
+
+.social-btn:hover::before {
+    left: 100%;
+}
+        
+
         /* ===== SECTION RÉFÉRENCES ===== */
         .references-section {
             margin: 80px 0;
@@ -1019,6 +1079,214 @@
     font-weight: 600;
 }
 
+/* FOOTER STYLES - À AJOUTER DANS TON CSS */
+.footer-section {
+    margin-top: 100px;
+    background: linear-gradient(135deg, var(--armadillo), var(--judge-gray));
+    border-radius: 30px 30px 0 0;
+    padding: 60px 40px 20px;
+    color: var(--blanc-pur);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm-20-18c9.941 0 18 8.059 18 18s-8.059 18-18 18S-8 39.941-8 30s8.059-18 18-18z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-title {
+    font-family: var(--font-elegant);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--blanc-pur);
+    letter-spacing: -0.5px;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.contact-link:hover {
+    color: var(--bronco);
+    transform: translateX(5px);
+}
+
+.contact-icon {
+    font-size: 1.1rem;
+}
+
+.response-time {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    border-bottom: 1px solid transparent;
+}
+
+.footer-link:hover {
+    color: var(--blanc-pur);
+    border-bottom-color: var(--bronco);
+    transform: translateX(5px);
+}
+
+.footer-cta {
+    text-align: center;
+}
+
+.footer-cta-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--blanc-pur);
+    color: var(--armadillo);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    gap: 15px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-social-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.footer-social-btn svg {
+    fill: var(--blanc-pur);
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.legal-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.legal-link:hover {
+    color: var(--blanc-pur);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-section {
+        padding: 40px 20px 15px;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .footer-link:hover {
+        transform: none;
+    }
+}
+
 /* ===== RESPONSIVE FAQ ===== */
 @media (max-width: 768px) {
     .faq-container {
@@ -1093,7 +1361,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="subtitle">De la création à l'optimisation • Spécialiste Textile depuis 3 ans</p>
         </div>
 
-        <div class="hero-section">
+        <div class="hero-section" id="hero">
             <div class="personal-intro">
                 <div class="avatar-container">
                     <img src="./pics/moi.jpg" alt="Nassim Lahlouh" class="avatar">
@@ -1107,17 +1375,35 @@ document.addEventListener('DOMContentLoaded', function() {
                         Spécialisé dans l'univers de la mode avec une approche 360°  
                         <strong>Design • Conversion • SEO • Photo produit • Stratégie</strong>
                     </p>
-                    <div class="social-proof">
+                    <!-- <div class="social-proof">
                         <span>⭐ 4.9/5 • 23 avis</span>
                         <span>🚀 Livraison 7-14 jours</span>
                         <span>💬 Support inclus</span>
-                    </div>
+                    </div> -->
+                    <!-- REMPLACE TA DIV social-proof PAR CECI -->
+<div class="social-proof">
+    <a href="https://wa.me/33783058871" target="_blank" class="social-btn whatsapp" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 1.172c-5.963 0-10.813 4.851-10.813 10.813 0 1.902.493 3.693 1.357 5.245l-1.44 5.26 5.389-1.413a10.764 10.764 0 0 0 5.145 1.311h.005c5.96 0 10.81-4.851 10.81-10.813s-4.85-10.813-10.81-10.813h-.005l.362.41zm0 19.744a8.89 8.89 0 0 1-4.531-1.24l-.325-.193-3.372.884.9-3.287-.212-.337a8.89 8.89 0 1 1 7.54 4.173zm4.868-6.656c-.266-.133-1.574-.777-1.818-.866-.244-.089-.422-.133-.599.133-.178.267-.688.866-.843 1.044-.156.177-.311.2-.577.066-.267-.133-1.126-.415-2.145-1.323-.793-.706-1.328-1.578-1.483-1.844-.156-.267-.017-.411.117-.544.12-.12.267-.311.4-.467.133-.155.178-.266.267-.444.089-.178.044-.333-.022-.467-.067-.133-.6-1.444-.822-1.977-.217-.518-.437-.448-.6-.456-.155-.008-.333-.01-.51-.01a.98.98 0 0 0-.71.333c-.244.267-.932.91-.932 2.22s.954 2.576 1.088 2.754c.133.178 1.877 2.866 4.547 4.018.635.274 1.131.438 1.517.56.638.202 1.218.174 1.677.105.511-.077 1.574-.643 1.796-1.265.222-.621.222-1.154.156-1.265-.067-.111-.244-.178-.511-.311z"/>
+        </svg>
+    </a>
+    <a href="https://www.linkedin.com/in/nassim-lahlouh-%F0%9F%92%BB%F0%9F%93%9A-6a96a8235?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BjxI7N8opQKua%2BcMY8PvMEg%3D%3D" target="_blank" class="social-btn linkedin" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+    </a>
+    <a href="https://www.instagram.com/nassim_le_breff/" target="_blank" class="social-btn instagram" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+        </svg>
+    </a>
+</div>
                 </div>
             </div>
         </div>
 
         <!-- Section Références -->
-        <div class="references-section">
+        <div class="references-section" id="references">
             <div class="references-header">
                 <h3>Ils me font confiance</h3>
                 <p>Marques textiles qui ont transformé leur business</p>
@@ -1192,7 +1478,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
             <!-- Section Impact Business -->
-            <div class="impact-section">
+            <div class="impact-section" id="impact">
                 <div class="impact-card">
                     <div class="impact-header">
                         <div class="impact-icon">
@@ -1230,7 +1516,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <!-- Section tarifs -->
-        <div class="pricing-grid">
+        <div class="pricing-grid" id="pricing">
             <div class="row row-3">
                 <div class="card card-basique">
                     <div class="card-header">
@@ -1309,7 +1595,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
             <!--section faq-->
-             <div class="faq-section">
+             <div class="faq-section" id="faq">
     <div class="faq-header">
         <h3>Questions Fréquentes</h3>
         <p>Tout ce que vous devez savoir sur notre expertise textile</p>
@@ -1510,6 +1796,79 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         </div>
+       
     </div>
+     <!-- FOOTER À AJOUTER JUSTE AVANT LA FERMETURE DE </div> du container -->
+<footer class="footer-section">
+    <div class="footer-content">
+        <!-- Section Contact -->
+        <div class="footer-column">
+            <h4 class="footer-title">Parlons de votre projet</h4>
+            <div class="footer-contact">
+                <a href="mailto:lahlouhnassim@gmail.com" class="contact-link">
+                    <span class="contact-icon">✉️</span>
+                    lahlouhnassimdev@gmail.com
+                </a>
+                <a href="tel:+33783058871 class="contact-link">
+                    <span class="contact-icon">📱</span>
+                    +33 7 83 05 88 71
+                </a>
+                <p class="response-time">💬 Réponse garantie sous 24h</p>
+            </div>
+        </div>
+
+        <!-- Navigation rapide -->
+        <div class="footer-column">
+            <h4 class="footer-title">Navigation</h4>
+            <div class="footer-nav">
+                <a href="#hero" class="footer-link">Accueil</a>
+                <a href="#references" class="footer-link">Références</a>
+                <a href="#pricing" class="footer-link">Tarifs</a>
+                <a href="#faq" class="footer-link">FAQ</a>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="footer-column footer-cta">
+    <h4 class="footer-title">Prêt à transformer votre boutique ?</h4>
+    <p class="footer-cta-text">Rejoignez les marques textiles qui ont multiplié leur CA par 5</p>
+    <a href="https://wa.me/33783058871?text=Bonjour,%20je%20souhaite%20discuter%20de%20mon%20projet%20Shopify" 
+       target="_blank" 
+       class="cta-button">
+        <span>Démarrer mon projet</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+    </a>
+    <div class="footer-social">
+        <a href="https://wa.me/33783058871" target="_blank" class="footer-social-btn" aria-label="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.031 1.172c-5.963 0-10.813 4.851-10.813 10.813 0 1.902.493 3.693 1.357 5.245l-1.44 5.26 5.389-1.413a10.764 10.764 0 0 0 5.145 1.311h.005c5.96 0 10.81-4.851 10.81-10.813s-4.85-10.813-10.81-10.813h-.005l.362.41zm0 19.744a8.89 8.89 0 0 1-4.531-1.24l-.325-.193-3.372.884.9-3.287-.212-.337a8.89 8.89 0 1 1 7.54 4.173zm4.868-6.656c-.266-.133-1.574-.777-1.818-.866-.244-.089-.422-.133-.599.133-.178.267-.688.866-.843 1.044-.156.177-.311.2-.577.066-.267-.133-1.126-.415-2.145-1.323-.793-.706-1.328-1.578-1.483-1.844-.156-.267-.017-.411.117-.544.12-.12.267-.311.4-.467.133-.155.178-.266.267-.444.089-.178.044-.333-.022-.467-.067-.133-.6-1.444-.822-1.977-.217-.518-.437-.448-.6-.456-.155-.008-.333-.01-.51-.01a.98.98 0 0 0-.71.333c-.244.267-.932.91-.932 2.22s.954 2.576 1.088 2.754c.133.178 1.877 2.866 4.547 4.018.635.274 1.131.438 1.517.56.638.202 1.218.174 1.677.105.511-.077 1.574-.643 1.796-1.265.222-.621.222-1.154.156-1.265-.067-.111-.244-.178-.511-.311z"/>
+            </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/nassim-lahlouh-%F0%9F%92%BB%F0%9F%93%9A-6a96a8235?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BjxI7N8opQKua%2BcMY8PvMEg%3D%3D" target="_blank" class="footer-social-btn" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+        </a>
+        <a href="https://www.instagram.com/nassim_le_breff/" target="_blank" class="footer-social-btn" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+            </svg>
+        </a>
+    </div>
+</div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+        <p>© 2024 Crescendo - Nassim Lahlouh • Spécialiste Shopify Textile</p>
+        <p class="footer-legal">
+            <a href="#" class="legal-link">Mentions légales</a> • 
+            <a href="#" class="legal-link">CGV</a> • 
+            Made with 🧵 in France
+        </p>
+    </div>
+</footer>
 </body>
 </html>
