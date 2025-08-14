@@ -60,6 +60,88 @@
             position: relative;
         }
 
+        /* BOUTON WHATSAPP FLOTTANT */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+}
+
+/* Animation pulse */
+@keyframes pulse-whatsapp {
+    0% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+    }
+    50% {
+        box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8);
+    }
+    100% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+    }
+}
+
+/* Tooltip au hover */
+.whatsapp-tooltip {
+    position: absolute;
+    right: 75px;
+    background: var(--armadillo);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+}
+
+.whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 8px solid var(--armadillo);
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+    
+    .whatsapp-tooltip {
+        display: none;
+    }
+}
         /* ===== MOTIFS TEXTILE BACKGROUND ===== */
         body::before {
             content: '';
@@ -1286,6 +1368,73 @@
         transform: none;
     }
 }
+/* BOUTON CTA DANS LES CARTES */
+.card-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px 30px;
+    background: var(--gradient-principal);
+    color: var(--blanc-pur);
+    text-decoration: none;
+    font-family: var(--font-moderne);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(169, 161, 150, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(169, 161, 150, 0.4);
+    letter-spacing: 1px;
+}
+
+/* Animation au hover */
+.card-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.5s ease;
+}
+
+.card-cta-btn:hover::before {
+    left: 100%;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-cta-btn {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+}
+/* Force les couleurs sur les boutons */
+.card-basique .card-cta-btn {
+    background: linear-gradient(90deg, #a9a196, #5a5042) !important;
+    color: white !important;
+}
+
+.card-standard .card-cta-btn {
+    background: linear-gradient(90deg, #5a5042, #544335) !important;
+    color: white !important;
+}
+
+.card-avance .card-cta-btn {
+    background: linear-gradient(90deg, #544335, #413b33) !important;
+    color: white !important;
+}
 
 /* ===== RESPONSIVE FAQ ===== */
 @media (max-width: 768px) {
@@ -1347,6 +1496,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </head>
 <body>
+
+    <!-- BOUTON WHATSAPP FLOTTANT -->
+<a href="https://wa.me/33783058871?text=Bonjour,%20je%20visite%20votre%20site%20et%20j'aimerais%20discuter%20de%20mon%20projet%20Shopify" 
+   target="_blank" 
+   class="whatsapp-float"
+   aria-label="Contactez-nous sur WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+        <path d="M12.031 1.172c-5.963 0-10.813 4.851-10.813 10.813 0 1.902.493 3.693 1.357 5.245l-1.44 5.26 5.389-1.413a10.764 10.764 0 0 0 5.145 1.311h.005c5.96 0 10.81-4.851 10.81-10.813s-4.85-10.813-10.81-10.813h-.005l.362.41zm0 19.744a8.89 8.89 0 0 1-4.531-1.24l-.325-.193-3.372.884.9-3.287-.212-.337a8.89 8.89 0 1 1 7.54 4.173zm4.868-6.656c-.266-.133-1.574-.777-1.818-.866-.244-.089-.422-.133-.599.133-.178.267-.688.866-.843 1.044-.156.177-.311.2-.577.066-.267-.133-1.126-.415-2.145-1.323-.793-.706-1.328-1.578-1.483-1.844-.156-.267-.017-.411.117-.544.12-.12.267-.311.4-.467.133-.155.178-.266.267-.444.089-.178.044-.333-.022-.467-.067-.133-.6-1.444-.822-1.977-.217-.518-.437-.448-.6-.456-.155-.008-.333-.01-.51-.01a.98.98 0 0 0-.71.333c-.244.267-.932.91-.932 2.22s.954 2.576 1.088 2.754c.133.178 1.877 2.866 4.547 4.018.635.274 1.131.438 1.517.56.638.202 1.218.174 1.677.105.511-.077 1.574-.643 1.796-1.265.222-.621.222-1.154.156-1.265-.067-.111-.244-.178-.511-.311z"/>
+    </svg>
+    <span class="whatsapp-tooltip">Discutons de votre projet !</span>
+</a>
+
     <!-- Icônes Textile Flottantes -->
     <div class="textile-icons">
         <div class="textile-icon pin"></div>
@@ -1523,7 +1684,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="card-icon"></div>
                         <div>
                             <div class="card-level">Lancement</div>
-                            <div class="card-description">Votre première boutique textile en ligne</div>
+                            <div class="card-description">Votre première boutique en ligne</div>
                         </div>
                     </div>
                     
@@ -1538,7 +1699,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         <li>Thème adapté textile + branding</li>
                         <li>Jusqu'à 10 produits avec descriptions</li>
                         <li>Formation utilisation incluse</li>
+                        <li>revision gratuit pendant le temps de travail</li>
                     </ul>
+                    <a href="https://wa.me/33783058871?text=Bonjour,%20je%20suis%20intéressé%20par%20le%20package%20[Lancement]" target="_blank" class="card-cta-btn">
+    Choisir cette offre →
+</a>
                 </div>
 
                 <div class="card card-standard">
@@ -1564,6 +1729,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         <li>Google Analytics + Search Console</li>
                         <li>Formation complète 1h visio</li>
                     </ul>
+                    <a href="https://wa.me/33783058871?text=Bonjour,%20je%20suis%20intéressé%20par%20le%20package%20[Boutique]" target="_blank" class="card-cta-btn">
+    Choisir cette offre →
+</a>
                 </div>
 
                 <div class="card card-avance">
@@ -1571,7 +1739,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="card-icon"></div>
                         <div>
                             <div class="card-level">Entreprise</div>
-                            <div class="card-description">Performance maximale pour grandes marques</div>
+                            <div class="card-description">Performance pour grandes marques</div>
                         </div>
                     </div>
                     
@@ -1588,6 +1756,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <li>Optimisation mobile & vitesse</li>
                         <li>Support prioritaire 3 mois</li>
                     </ul>
+                    <a href="https://wa.me/33783058871?text=Bonjour,%20je%20suis%20intéressé%20par%20le%20package%20[Entreprise]" target="_blank" class="card-cta-btn">Choisir cette offre →</a>
                 </div>
             </div>
 
@@ -1805,11 +1974,11 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="footer-column">
             <h4 class="footer-title">Parlons de votre projet</h4>
             <div class="footer-contact">
-                <a href="mailto:lahlouhnassim@gmail.com" class="contact-link">
+                    <a href="#" onclick="navigator.clipboard.writeText('lahlouhnassimdev@gmail.com'); alert('Email copié !'); return false;" class="contact-link">
                     <span class="contact-icon">✉️</span>
                     lahlouhnassimdev@gmail.com
                 </a>
-                <a href="tel:+33783058871 class="contact-link">
+                <a href="tel:+33783058871" class="contact-link">
                     <span class="contact-icon">📱</span>
                     +33 7 83 05 88 71
                 </a>
@@ -1823,6 +1992,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="footer-nav">
                 <a href="#hero" class="footer-link">Accueil</a>
                 <a href="#references" class="footer-link">Références</a>
+                <a href="#impact" class="footer-link">Impact Attendu</a>
                 <a href="#pricing" class="footer-link">Tarifs</a>
                 <a href="#faq" class="footer-link">FAQ</a>
             </div>
