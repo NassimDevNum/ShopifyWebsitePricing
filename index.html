@@ -1614,10 +1614,6 @@
 }
 </style>
 
-<!-- ===== JAVASCRIPT À AJOUTER AVANT LA FERMETURE </body> ===== -->
-
-    </style>
-
     <script>
 // Gestion de l'accordéon FAQ
 document.addEventListener('DOMContentLoaded', function() {
@@ -1639,6 +1635,27 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Toggle l'item actuel
             item.classList.toggle('active');
+        });
+    });
+});
+
+
+// Bonus : Tracking des clics FAQ pour Google Analytics
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const questionText = this.textContent.trim();
+            
+            // Track dans Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'faq_click', {
+                    'event_category': 'FAQ',
+                    'event_label': questionText,
+                    'custom_parameter': 'user_engagement'
+                });
+            }
         });
     });
 });
