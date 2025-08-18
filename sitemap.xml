@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        
+    <!-- Page d'accueil - Priorité maximale -->
+    <url>
+        <loc>https://creermaboutique.fr/</loc>
+        <lastmod>2025-01-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Section Références -->
+    <url>
+        <loc>https://creermaboutique.fr/#references</loc>
+        <lastmod>2025-01-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Section Tarifs -->
+    <url>
+        <loc>https://creermaboutique.fr/#pricing</loc>
+        <lastmod>2025-01-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Section FAQ -->
+    <url>
+        <loc>https://creermaboutique.fr/#faq</loc>
+        <lastmod>2025-01-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Section Impact Business -->
+    <url>
+        <loc>https://creermaboutique.fr/#impact</loc>
+        <lastmod>2025-01-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+</urlset>
