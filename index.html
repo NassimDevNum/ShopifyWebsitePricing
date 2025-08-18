@@ -32,6 +32,10 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://creermaboutique.fr/">
     
+    <!-- Logo pour Google -->
+    <link rel="logo" href="https://creermaboutique.fr/pics/logo.png">
+    <meta property="og:logo" content="https://creermaboutique.fr/pics/logo.png">
+    
     <!-- FAVICON - UNE SEULE VERSION PROPRE -->
     <link rel="icon" href="https://creermaboutique.fr/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="https://creermaboutique.fr/apple-touch-icon.png">
@@ -126,40 +130,48 @@
             }
         ]
     }
+
+    
     </script>
 
-    <!-- VOTRE CSS ICI -->
-    
-</head>
     
     <!-- Données Structurées - Person (Expert) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Nassim Lahlouh",
-        "jobTitle": "Expert Shopify spécialisé textile et mode",
-        "description": "Expert Shopify avec 3 ans d'expérience spécialisé dans les marques textiles. Résultats prouvés : CA multiplié par 5 pour ses clients.",
-        "image": "https://creermaboutique.fr/pics/moi.jpg",
-        "url": "https://creermaboutique.fr",
-        "sameAs": [
-            "https://www.linkedin.com/in/nassim-lahlouh-%F0%9F%92%BB%F0%9F%93%9A-6a96a8235",
-            "https://www.instagram.com/nassim_le_breff/"
-        ],
-        "worksFor": {
-            "@type": "Organization",
-            "name": "Crescendo"
-        },
-        "knowsAbout": [
-            "Shopify",
-            "E-commerce textile",
-            "Mode",
-            "SEO",
-            "Conversion",
-            "Design web"
-        ]
-    }
-    </script>
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nassim Lahlouh",
+    "jobTitle": "Expert Shopify spécialisé textile et mode",
+    "description": "Expert Shopify avec 3 ans d'expérience spécialisé dans les marques textiles. Résultats prouvés : CA multiplié par 5 pour ses clients.",
+    "image": "https://creermaboutique.fr/pics/moi.jpg",
+    "url": "https://creermaboutique.fr",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paris",
+        "postalCode": "75000",
+        "addressCountry": "FR"
+    },
+    "sameAs": [
+        "https://www.linkedin.com/in/nassim-lahlouh-%F0%9F%92%BB%F0%9F%93%9A-6a96a8235",
+        "https://www.instagram.com/nassim_le_breff/"
+    ],
+    "worksFor": {
+        "@type": "Organization",
+        "name": "Crescendo"
+    },
+    "knowsAbout": [
+        "Shopify",
+        "E-commerce textile", 
+        "Mode",
+        "SEO",
+        "Conversion",
+        "Design web"
+    ]
+}
+</script>
+
+</head>
+    
   
     <style>
         /* ===== VARIABLES TEXTILE ===== */
@@ -701,13 +713,6 @@
             background: rgba(169, 161, 150, 0.1);
             transform: translateY(-2px);
         }
-
-            /* AJOUTE CE CSS DANS TON FICHIER STYLE */
-.social-proof {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
 
 .social-btn {
     width: 50px;
@@ -1496,7 +1501,6 @@
     color: var(--blanc-pur);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .footer-section {
         padding: 40px 20px 15px;
@@ -1518,8 +1522,13 @@
     
     .footer-link:hover {
         transform: none;
+    } 
+    .card-cta-btn {
+        padding: 12px 25px;
+        font-size: 0.95rem;
     }
 }
+
 /* BOUTON CTA DANS LES CARTES */
 .card-cta-btn {
     display: inline-flex;
@@ -1565,13 +1574,7 @@
 }
 
 
-/* Responsive */
-@media (max-width: 768px) {
-    .card-cta-btn {
-        padding: 12px 25px;
-        font-size: 0.95rem;
-    }
-}
+
 /* Force les couleurs sur les boutons */
 .card-basique .card-cta-btn {
     background: linear-gradient(90deg, #a9a196, #5a5042) !important;
@@ -1614,55 +1617,6 @@
 }
 </style>
 
-    <script>
-// Gestion de l'accordéon FAQ
-document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', () => {
-            // Fermer les autres items de la même catégorie
-            const category = item.closest('.faq-category');
-            const otherItems = category.querySelectorAll('.faq-item');
-            
-            otherItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
-                }
-            });
-            
-            // Toggle l'item actuel
-            item.classList.toggle('active');
-        });
-    });
-});
-
-
-// Bonus : Tracking des clics FAQ pour Google Analytics
-document.addEventListener('DOMContentLoaded', function() {
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-            const questionText = this.textContent.trim();
-            
-            // Track dans Google Analytics
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'faq_click', {
-                    'event_category': 'FAQ',
-                    'event_label': questionText,
-                    'custom_parameter': 'user_engagement'
-                });
-            }
-        });
-    });
-});
-        </script>
-
-
-
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1691,7 +1645,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="container">
         <div class="header">
-            <h1 class="title">Boutiques Shopify pour Marques de Mode & Textile</h1>
+            <h1 class="title">Transformez Votre Marque Textile en Boutique Shopify Performante</h1>
             <p class="subtitle">De la création à l'optimisation • Spécialiste Textile depuis 3 ans</p>
         </div>
 
@@ -2180,5 +2134,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </p>
     </div>
 </footer>
+
+
+    <script>
+// Gestion de l'accordéon FAQ
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            // Fermer les autres items de la même catégorie
+            const category = item.closest('.faq-category');
+            const otherItems = category.querySelectorAll('.faq-item');
+            
+            otherItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle l'item actuel
+            item.classList.toggle('active');
+        });
+    });
+});
+
+
+// Bonus : Tracking des clics FAQ pour Google Analytics
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const questionText = this.textContent.trim();
+            
+            // Track dans Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'faq_click', {
+                    'event_category': 'FAQ',
+                    'event_label': questionText,
+                    'custom_parameter': 'user_engagement'
+                });
+            }
+        });
+    });
+});
+        </script>
+
+
+
 </body>
 </html>
